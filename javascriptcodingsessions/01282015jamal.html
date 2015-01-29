@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <script>
+      var text = "Gainsight";
+      var characterCount = {};
+
+      function abc (x){
+        for(var i = 0; i < x.length; i++) {
+          if (!characterCount.hasOwnProperty(x[i])) {
+            characterCount[x[i]] = 1;
+          }
+          else {
+            characterCount[x[i]] += 1;
+          }
+        }
+
+        return characterCount;
+      }
+    </script>
+  </body>
+</html>
