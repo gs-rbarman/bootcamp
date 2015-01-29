@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <style>
+      *{padding: 0; margin: 0}
+      html, body {height: 100%}
+      body{font-family: sans-serif; font-size: 14px;}
+      #heading {font-size: 15px;padding: 10px 0px 10px 10px}
+      .labels:after {content:":"}
+      .labels {width: 160px;}
+      #mainArticle {position: relative; width: 660px;border: 2px solid black; margin: auto}
+      #cross_image{position: absolute; top: 10px; right: 10px;}
+      #articleHeading, #owner {background-color: rgba(204, 204, 204, 0.21)}
+      #infoForm {padding-left: 15px;}
+      .formInput, .formButton, #commentBox{border:1px solid rgba(204, 204, 204, 0.55); border-radius: 2px; box-sizing:border-box;}
+      .formInput, .formButton {padding: 4px 5px;}
+      #table_formfill td {padding-top: 5px; padding-bottom: 5px;}
+      #commentBox {resize: none}
+      #buttons {text-align: center;padding-bottom: 9px; padding-top: 5px;}
+      #buttons input {border-radius: 3px; width: 90px; padding: 6px 0; color: white; cursor: pointer}
+      #cancelButton {margin-left: 10px; background-color: #B3B2B2; border: 1px solid #B3B2B2;}
+      #saveButton {margin-left: 10px; background-color: rgba(52, 163, 125, 0.78); border: 1px solid rgba(52, 163, 125, 0.78)}
+      #customer {padding-right: 18px; background: url('./images/search.png') no-repeat 195px center; }
+      #subject {width: 430px}
+      #customer, #owner, #reason {width: 215px}
+      #duedate {width: 107px}
+      .ui-datepicker-trigger {margin-left: -19px; vertical-align: -3px}
+      .ui-state-hover {border: none; background: none; font-weight: initial; color: initial;}
+      .ui-state-default {border: 1px solid #d3d3d3; background: none; height: initial;}
+      .ui-widget {font-size: 13px; font-family: sans-serif;}
+      .ui-selectmenu-button span.ui-selectmenu-text {line-height: initial;}
+      .ui-corner-all {border-radius: 2px}
+      .ui-widget span {background: url("images/orange_down.png") no-repeat 195px center}
+      .ui-icon {background-image: url("images/orange_down.png")}
+      .ui-selectmenu-button span.ui-selectmenu-text {padding-left: 8px}
+    </style>
+  </head>
+  <body>
+    <section>
+      <article id="mainArticle">
+        <header id="articleHeading">
+          <h1 id="heading">Add Risk</h1>
+          <img id="cross_image" src="images/cross_close.png" alt="close">
+        </header>
+        <form id="infoForm">
+          <table id="table_formfill">
+            <tr>
+              <td class="labels">Subject</td>
+              <td><input class="formInput" type="text" id="subject"></td>
+              </tr>
+            <tr>
+              <td class="labels">Customer</td>
+              <td><input class="formInput" type="text" id="customer"></td>
+              </tr>
+            <tr>
+              <td class="labels">Owner</td>
+              <td><input class="formInput" type="search" placeholder="Type to search" id="owner"></td>
+              </tr>
+            <tr>
+              <td class="labels">Reason</td>
+              <td>
+                <select id="reason" type="text">
+                  <option>I don't know</option>
+                  <option>You tell me</option>
+                  <option>I have no idea</option>
+                </select>
+              </td>
+              </tr>
+            <tr>
+              <td class="labels">Due Date</td>
+              <td><input class="formInput" type="text" id="duedate"></td>
+              </tr>
+            <tr>
+              <td class="labels" style="vertical-align: top">Comments</td>
+              <td><textarea id="commentBox" cols="59" rows="4" id="comment"></textarea></td>
+              </tr>
+          </table>
+          <div id="buttons">
+            <input class="formButton" id="saveButton" type="button" value="Save" name="status_save"><input class="formButton" id="cancelButton" type="button" value="Cancel" name="status_cancel">
+          </div>
+        </form>
+      </article>
+    </section>
+    <script>
+      $(function() {
+        $( "#duedate" ).datepicker({
+          showOn: "button",
+          buttonImage: "images/calendar.png",
+          buttonImageOnly: true,
+          buttonText: "Select date"
+        });
+      });
+      $(function() {$( "#reason" ).selectmenu();});
+      $(function() {$(".ui-widget span").removeClass("ui-icon")});
+    </script>
+  </body>
+</html>
