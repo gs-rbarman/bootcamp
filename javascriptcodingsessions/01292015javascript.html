@@ -1,0 +1,89 @@
+<html>
+  <head></head>
+  <body>
+    <article>
+      Number of lines: <input id="num" type="text" name="number" value="">
+      <input onclick=printOutput() value="Exercise1_Output" type="button"/>
+    </article>
+    <br />
+    <article>
+      <input onclick=printOutput2() value="Exercise2_Output" type="button"/>
+    </article>
+    <br />
+    <article>
+      Grid (input 8 for 8 by 8): <input id="num2" type="text" name="number" value="">
+      <input onclick=printOutput3() value="Exercise3_Output" type="button"/>
+    </article>
+  <script>
+
+    function printOutput() {
+      var number = document.getElementById("num").value;
+      var x = "";
+      for (var i = 0; i < number; i++) {
+        x += "#";
+        console.log(x);
+      }
+    }
+
+    function printOutput2() {
+      for (var i = 1; i <= 100; i++) {
+        if ( i % 3 == 0 && i % 5 == 0 )
+          console.log(i + ": FizzBuzz");
+        else if ( i % 3 == 0 )
+          console.log(i + ": Fizz");
+        else if ( i % 5 == 0 && i % 3 != 0)
+          console.log(i + ": Buzz");
+        else
+          console.log(i);
+      }
+    }
+
+    function printOutput3() {
+      var number = document.getElementById("num2").value;
+      var str = "";
+      for (var i = 0; i < number; i++ ) {
+        for (var j = 0; j < number; j++ ) {
+          if ( (i+j) % 2 == 0 ) {
+            str = str + "#";
+          }
+          else
+            str = str + " ";
+        }
+        console.log(str);
+        str = "";
+        // console.info("\n");
+      }
+
+
+      // for (var i = 0; i < number; i++ ) {
+      //   if (i % 2 == 0) {
+      //     var output = "";
+      //     for (var j = 0; j < number; j++) {
+      //       if ( j % 2 == 0 ) {
+      //         output += " ";
+      //       }
+      //       else
+      //         output += "#";
+      //     }
+      //
+      //     console.log(output);
+      //   }
+      //   else {
+      //     for (var j = 0; j < number; j++) {
+      //       var output = "";
+      //       for (var j = 0; j < number; j++) {
+      //         if ( j % 2 != 0 ) {
+      //           output += " ";
+      //         }
+      //         else
+      //           output += "#";
+      //         }
+      //
+      //         console.log(output);
+      //     }
+      //   }
+      // }
+    }
+  </script>
+  </body>
+</html>
