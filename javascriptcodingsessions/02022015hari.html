@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Open browser console</h1>
+    <script>
+      console.log('Functions available:');
+      console.log('--------------------');
+      console.log('1. abc(<string>)');
+      console.log('2. factorialRecur(<number>)');
+      console.log('3. factorialNonRecur(<number>)');
+      console.log('4. separateOddEven(<array>)');
+      console.log('5. separateOddEven(<optional arguments>)');
+      console.log(" ");
+      function abc (x){
+
+        var characterCount = {};
+        var repeats = {};
+        for(var i = 0; i < x.length; i++) {
+          if (!characterCount.hasOwnProperty(x[i])) {
+            characterCount[x[i]] = 1;
+          }
+          else {
+            characterCount[x[i]] += 1;
+            if (!repeats.hasOwnProperty(x[i])) {
+              repeats[x[i]] = characterCount[x[i]];
+            }
+            else {
+              repeats[x[i]] += 1;
+            }
+          }
+        }
+
+        return repeats;
+      }
+
+      function factorialRecur(x) {
+        if (x == 0)
+          return 1;
+        else
+          return x * factorialRecur(x-1);
+      }
+
+      function factorialNonRecur(x) {
+        var result = 1;
+        if (x == 0)
+          return 1;
+        while(x >= 1) {
+          result *= x;
+          x--;
+        }
+        return result;
+      }
+
+
+      function separateOddEven(x) {
+        var evens = [];
+        var odds = [];
+        var len = x.length;
+        for (var i = 0; i < len; i++ ) {
+          if (x[i] % 2 == 0) {
+            evens.push(x[i]);
+          }
+          else
+            odds.push(x[i]);
+        }
+
+        console.log('Evens: ' + evens);
+        console.log('Odds: ' + odds);
+        return "done!";
+      }
+
+      function numberofArguments(x) {
+        var len = arguments.length;
+        for(var i = 0; i < len; i++) {
+          console.log(arguments[i]);
+        }
+      }
+    </script>
+  </body>
+</html>
