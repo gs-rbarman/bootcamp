@@ -5,9 +5,11 @@
   <body>
     <script>
       var text = "Gainsight";
-      var characterCount = {};
 
       function abc (x){
+
+        var characterCount = {};
+
         for(var i = 0; i < x.length; i++) {
           if (!characterCount.hasOwnProperty(x[i])) {
             characterCount[x[i]] = 1;
