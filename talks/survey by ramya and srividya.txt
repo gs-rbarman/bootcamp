@@ -1,0 +1,76 @@
+Survery or Survery App
+----------------------
+Initially it was separate. Later on integrated. It was used for NPS service only.
+
+back then, info was loaded to nps survery response and nps survey master and using formula values were aggregated.
+
+based on results we do something more, we raise cta's
+
+survey name means feedback
+
+survey is very closely linked to rules engine and cockpit
+
+cases are triggered
+once there is a case and case is closed a feedback is taken
+feedback is also taken for open pending cases
+
+Also, when a build is released a feedback is initiated to be taken.
+
+
+track responses, how to design a survey, publishing a survey all come under under survey
+
+
+
+
+five (5) types of survey
+--------------------
+non anonymous, partial anonymous (account tracking; many number of people), complete anonymous
+
+and, other than that two predefined surveys (implementation and nps survey)
+
+
+
+surveys (3) sent via email services
+-------------------------------
+gainsight email services and marketo email services don't have any limit
+salesforce has limits and so the above one is used
+
+configurations are needed to be made for using gainsight and marketo email services
+while salesforce needs no configuration
+
+
+mandrill is used for gainsight email services
+marketo is a good tool for marketing automation
+
+primary and secondary actions in survey
+
+
+
+steps to create a survey
+
+
+net promoter score (NPS) is a standard question
+
+
+
+using branching and paging
+
+we can do these actions
+-----------------------
+create
+edit
+close
+delete
+design
+publish
+set cta
+distribute
+analyze
+preview
+permissions
+
+
+creating CTA's from surveys is the business use case of surveys
+
+-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-
+
