@@ -1,0 +1,33 @@
+MDA (application)
+
+java
+> jersey
+> spring
+
+data stores
+> mongo db using robomongo to query stuff for visualization purposes
+> postgres
+> redis
+
+Queues
+> rabbit mq
+
+
+
+build process
+> maven - configuring all external libraries for the java application
+> sonar
+> cobertura
+> jacoco 
+> jenkins - deployment of apps
+
+deployment
+> heroku
+
+logentries
+
+S3/EC2
+
+
+
+server, server application etc no required. Heroku gives everything
