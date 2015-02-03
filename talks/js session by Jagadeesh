@@ -1,0 +1,138 @@
+steps followed to perform a task
+
+data and information
+programming
+data type.................................... memory optimization
+dynamic vs static
+interpretted vs compiled
+variables and constants ..................... memory location
+operators
+	> assignemnt
+	> arithmetic
+	> logical
+	> conditional
+	> string operators
+
+
+data types specific to javascript
+
+
+primary data types
+	> string
+	> numbers
+	> boolean
+
+
+composite data types
+	> object
+	> array
+
+special data type
+	> null
+	> undefined
+
+
+
+first program
+=============
+var abc = 123
+
+
+good question
+=============
+how does it know? when does it know what variable is given to the interpreter?
+
+
+what do you mean by primitive (context --> data type)?
+
+
+excellent examples: refresher
+=============================
+ reason for creating a composite data type example
+
+
+why has javascript objects become the data type for data exchange??
+
+
+javascript variables are case sensitive
+var abc = 2;
+var ABC = 2; are different
+
+
+understanding null and undefined with respect to memory example
+
+------------------------------------------X--------------------------------------------
+SESSION TWO
+===========
+interpretor and compiler
+client and server concept
+
+cool concept
+-------------
+why do we need a server-side language
+
+email funny example
+
+distributing computation to reduce load on server
+
+
+
+
+
+
+
+
+
+
+web	sockets - full duplex, bi-directional; real-time
+used in : chatting, stock markets, online-gaming
+unlike that: http isn't full duplex
+
+
+computation right to left in css and javascript statements too
+
+
+operators: ++ -- assignemnt
+
+we are using javascript for : form validation, dom manipulation and visualizations
+important:
+
+javascript validation is not a replacement for server side validation
+
+
+
+caching another reason why not to use url for sending forms and exposing passwords
+
+functions are set of statements to do a task
+
+
+
+form
+
+functions
+	scopes
+	anonymous functions
+	self calling function
+	closure
+	hoisting
+
+
+events
+	callback
+
+inheritance
+
+JSON
+
+
+
+closure done! understood. intermediate scope
+three types of scopes global, local and intermediate scope
+
+
+observer pattern seen in setInterval
+
+
+
+event
+event objects
