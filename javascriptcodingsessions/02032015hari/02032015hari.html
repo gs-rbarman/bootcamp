@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/jquery-min.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+    <link href="css/styles.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body>
+    <table id="selectionTable">
+      <tbody>
+        <tr>
+          <td class="selections">
+            <label for="priority">Priority: </label>
+            <select id="priority">
+              <option>None</option>
+            </select>
+          </td>
+          <td class="selections">
+            <label for="owner">Owner: </label>
+            <select id="owner">
+              <option>None</option>
+            </select>
+          </td>
+          <td class="selections">
+            <label for="groupBy">Group By: </label>
+            <select id="groupBy">
+              <option>None</option>
+              <option>TypeName</option>
+              <option>DueDate</option>
+              <option>StageName</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br><br><br>
+    <div><strong>CTA count: </strong><span id="ctaCount">0</span></div>
+    <br>
+    <table id="dataTable">
+      <thead id="tableHeader">
+        <tr>
+          <th id="name">Name</th>
+          <th id="acName">Account Name</th>
+          <th id="asv">ASV</th>
+          <th id="users">Users</th>
+          <th id="type">Type</th>
+          <th id="age">Age</th>
+        </tr>
+      </thead>
+      <tbody id="dataTableBody">
+
+      </tbody>
+    </table>
+    <script type="text/javascript" src="js/ninja.js"></script>
+  </body>
+</html>

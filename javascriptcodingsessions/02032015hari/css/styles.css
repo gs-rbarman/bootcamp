@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "MS Sans";
+  src: local("Microsoft Sans Serif Regular") format("ttf");
+}
+#tableHeader {background: gold}
+body {font-family: Monospace;font-size: 16px}
+#name {
+ width: 315px;
+}
+#acName {
+  width: 500px;
+}
+#asv {
+  width: 95px;
+}
+#users {
+  width: 100px;
+}
+#type {
+  width: 100px;
+}
+#age {
+  width: 50px;
+}
+#selectionTable {
+  width: 100%;
+}
+.selections {
+  text-align: center;
+}
