@@ -1,0 +1,8 @@
+coding session on functions by Hari
+====================================
+
+1. anonymous fns
+2. self-declaring funs
+3. global variables vs local variables concern is in terms of memory leaks
+4. reference to objects declared in heap
+5. two types of defining functions - and top down approach 
