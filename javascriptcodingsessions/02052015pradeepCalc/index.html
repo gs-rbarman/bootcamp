@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <input type="text" id="display"/>
+    <table id="digits">
+        <tbody>
+            <tr>
+                <td class="numbers">1</td>
+                <td class="numbers">2</td>
+                <td class="numbers">3</td>
+                <td class="numbers">4</td>
+
+            </tr>
+            <tr>
+                <td class="numbers">5</td>
+                <td class="numbers">6</td>
+                <td class="numbers">7</td>
+                <td class="numbers">8</td>
+            </tr>
+            <tr>
+                <td class="numbers">9</td>
+                <td class="numbers">0</td>
+                <td class="numbers dot">.</td>
+                <td id="equals">=</td>
+            </tr>
+        </tbody>
+    </table>
+    <table id="operators">
+        <tbody>
+            <tr>
+                <td>+</td>
+                <td>-</td>
+                <td>/</td>
+                <td>*</td>
+            </tr>
+        </tbody>
+    </table>
+    <span id="otherOps">
+                <input class="oO" type="button" id="purge" value="BACKSPC"/>
+                <input class="oO" type="button" id="reset" value="RESET"/>
+    </span>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="js/sflansburg.js"></script>
+</body>
+</html>
