@@ -2,13 +2,12 @@ td {
     cursor: pointer;
 }
 #digits td, #operators td{
-    width: 40px;
-    height: 40px;
     text-align: center;
 }
-.numbers {background-color: #C5C5C5; border-radius: 50%;}
+.numbers button, #operators button, #equals button {width: 40px; height: 40px;}
+.numbers button {background-color: #C5C5C5; border-radius: 50%;}
 /*.dot{background-color: #ffffff; border-radius: 50%;}*/
 #display {text-align: right}
 #otherOps .oO {background-color: #2aabd2; border-radius: 20px;padding: 2px 5px;color: white;}
-#operators td {background-color: #F2C688; border-radius: 50%;}
-#equals{background-color: #8DE58D;border-radius: 50%;}
+#operators button {background-color: #F2C688; width: 40px; height: 40px; border-radius: 50%;}
+#equals button {background-color: #8DE58D; border-radius: 50%;}
