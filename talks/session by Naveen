@@ -1,0 +1,53 @@
+evolution of js for doing stuff form validation to now entire application
+
+why backbone.js
+- pre-requisities:
+   dom,
+   jquery (query, efficient query, events, custom events-(creating and triggering and passing data, event namespaceing),
+
+
+understanding control flow
+
+
+How DOM came into picture - object created and provided to Javascript.
+
+on dom view takes stuff form model
+
+polling is done on model by view - e.g. at interval see for changes. but this is expensive
+
+view should only read not poll
+
+view
+model
+controller/manager
+
+router gets initiated and maps things for the controller. it contains the url pattern
+
+deep-linking
+
+for conventional web application router is a part of the controller
+for single web applications its separate.
+it is good practice to have it separate.
+
+
+history api, hash change
+
+router listens to hash change
+
+placeholder is a string (an id) given to inner components of a hash
+
+
+controller listens to url executes logic (if logic, http ajax requests)and shows the view
+
+after data from ajax returns it is fed to model
+divide the model (message.js) to two parts of collection and single message
+
+--------------------x------------------
+http verbs - get post put delete
+
+
+model methods (in backbone) - fetch, save, sync
+
+
+
+dom events and custom events
