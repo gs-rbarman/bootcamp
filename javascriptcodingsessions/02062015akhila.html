@@ -1,0 +1,23 @@
+<script>
+console.log("recursion fuction: rec(<string>)");
+
+function rec(str){
+  var ar = [];
+  var regex = /^[a-zA-Z]*$/;
+  for (var i = 0; i < str.length; i++) {
+    if (regex.test(str[i]) ) {
+      ar.push(str[i]);
+    }
+  }
+  var revAr = ar.reverse();
+  var revStr = ar.join("");
+
+  if (str === revStr) {
+    console.log("its a pallindrome.");
+  }
+  else {
+    console.log("not a pallindrome");
+  }
+
+}
+</script>
