@@ -11,29 +11,49 @@
         <tr>
           <td class="selections">
             <label for="priority">Priority: </label>
-            <select id="priority">
+            <select id="priority" class="setA">
               <option>None</option>
             </select>
           </td>
           <td class="selections">
             <label for="owner">Owner: </label>
-            <select id="owner">
+            <select id="owner" class="setA">
               <option>None</option>
             </select>
           </td>
           <td class="selections">
             <label for="groupBy">Group By: </label>
             <select id="groupBy">
-              <option>None</option>
-              <option>TypeName</option>
-              <option>DueDate</option>
-              <option>StageName</option>
+              <option value="None">None</option>
+              <option value="TypeName">Type</option>
+              <option value="PriorityName">Priority</option>
+              <option value="StageName">Stage</option>
+            </select>
+          </td>
+          <td class="selections">
+            <label for="aggregations">ASV: </label>
+            <select id="aggregations">
+              <option value="None">Select Aggregation Type</option>
+              <option value="sum">SUM</option>
+              <option value="min">MIN</option>
+              <option value="max">MAX</option>
             </select>
           </td>
         </tr>
       </tbody>
     </table>
-    <br><br><br>
+    <br>
+    <table id="">
+      <thead id="">
+        <tr>
+          <th id="asv">ASV's</th>
+        </tr>
+      </thead>
+      <tbody id="agData">
+
+      </tbody>
+    </table>
+    <br>
     <div><strong>CTA count: </strong><span id="ctaCount">0</span></div>
     <br>
     <table id="dataTable">
@@ -45,6 +65,7 @@
           <th id="users">Users</th>
           <th id="type">Type</th>
           <th id="age">Age</th>
+          <th id="groupBy">Group<span id="groupType">(None)</span></th>
         </tr>
       </thead>
       <tbody id="dataTableBody">
