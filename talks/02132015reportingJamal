@@ -1,0 +1,59 @@
+reporting by Jamal
+===================
+
+
+mongo cta
+
+the object : report info
+
+
+report builder
+---------------
+how the query is generated on the json data(report info object)
+
+
+select count(AN), count(CtA),
+from Mongo_CTA
+where AN = "****" and CTA = "****"
+group by created date
+having count (AN) > 20
+order by abc
+
+limitations of database
+
+database
+---------
+process
+memory
+
+
+mongo has given dynamicity
+
+
+
+
+use cases
+---------
+page view and active users
+top 15 accounts
+
+
+
+architecture
+------------
+builder
+processor
+data source/dat loader
+
+
+
+
+
+data science creates a report master object after consuming data
+
+
+
+building from
+--------------
+report master
+collection master
