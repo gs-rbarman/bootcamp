@@ -1,0 +1,77 @@
+Rules Engine by Vivek
+======================
+
+steps
+------
+fetch
+filter - add criteria done in MDA; having functionality not in SOQL done in MDA
+act
+report
+
+
+
+use case1 - Load to Customers
+------------------------------
+account is the fundamental object for Gainsight
+
+
+query is built on MDA and api call is done to salesforce to fetch info from SFDC
+Why did we construct this in MDA? Answer: advantages
+
+
+
+use case2 - Load to Usage Data
+-------------------------------
+usage data is the heart of Gainsight
+
+
+
+use case3 - Call to Action
+---------------------------
+
+etc etc
+
+
+
+what data is on Matrix?
+
+
+
+
+
+sfdc objects for rules set up and action templates
+--------------
+automated alert rules detail (object)
+
+action template detail (object)
+
+
+
+mda stores - execution logs and schedule in mongo
+-----------
+messageStatusDetail (object)
+
+
+rules dyno
+-----------
+
+read rule - talk to SFDC to get rule id
+construct query
+run query - talk to SFDC to run query and get data
+do action(s)
+clean up
+
+
+READ MORE:
+-----------
+A techie's guide to custom rules engine
+
+
+
+----------for engagement rules also-----
+we contact MDA coz we want to save logs. Logs are on MDA stored on Mongo
+mandrill is on MDA
+
+
+
+Engagement Rules has no schedule it is trigger based
