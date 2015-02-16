@@ -1,33 +1,43 @@
 MDA (application)
+=================
 
-java
-> jersey
-> spring
+Java
+-----
+> jersey 2.7
+> spring 1.4.1
 
-data stores
-> mongo db using robomongo to query stuff for visualization purposes
+Data stores
+-----------
+> mongo db 2.4 & 2.6 using robomongo to query stuff for visualization purposes
 > postgres
-> redis
+> redis distributed processing
 
 Queues
+------
 > rabbit mq
 
 
 
 build process
-> maven - configuring all external libraries for the java application
-> sonar
-> cobertura
-> jacoco 
+=============
+
+> maven 3.2.2 - configuring all external libraries for the java application
+> sonar 4.5.1 - quality of code
+> cobertura - code coverage
+> jacoco
 > jenkins - deployment of apps
 
+
 deployment
+----------
 > heroku
 
-logentries
+Logentries - production log; moving onto Sumo Logic
+----------------------------------------------------
 
 S3/EC2
+-------
 
 
-
+-----------------------X-------------------------
 server, server application etc no required. Heroku gives everything
