@@ -20,28 +20,8 @@
 
 
           <div class="site-search js-site-search" role="search">
-            <!-- <form accept-charset="UTF-8" action="" class="js-site-search-form" data-global-search-url="" data-repo-search-url=""> -->
-              <!-- <div style="margin:0;padding:0;display:inline">
-                <input name="utf8" type="hidden" value="✓">
-              </div> -->
               <input type="text" id="profSch" class="" data-hotkey="s" name="q" placeholder="Search profile" data-global-scope-placeholder="Search profile" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off">
-              <!-- <div class="scope-badge">This repository</div> -->
-            <!-- </form> -->
           </div>
-          <!-- <ul class="header-nav left" role="navigation">
-            <li class="header-nav-item explore">
-              <a class="header-nav-link" href="/explore" data-ga-click="Header, go to explore, text:explore">Explore</a>
-            </li>
-            <li class="header-nav-item">
-              <a class="header-nav-link" href="https://gist.github.com" data-ga-click="Header, go to gist, text:gist">Gist</a>
-            </li>
-            <li class="header-nav-item">
-              <a class="header-nav-link" href="/blog" data-ga-click="Header, go to blog, text:blog">Blog</a>
-            </li>
-            <li class="header-nav-item">
-              <a class="header-nav-link" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a>
-            </li>
-          </ul> -->
 
 
           <ul class="header-nav user-nav right" id="user-links">
@@ -54,59 +34,17 @@
               </a>
             </li>
 
-            <!-- <li class="header-nav-item dropdown js-menu-container">
-              <a class="header-nav-link js-menu-target tooltipped tooltipped-s" href="#" aria-label="Create new..." data-ga-click="Header, create new, icon:add">
-                <span class="octicon octicon-plus"></span>
-                <span class="dropdown-caret"></span>
-              </a>
-
-              <div class="dropdown-menu-content js-menu-content">
-
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="/new" data-ga-click="Header, create new repository, icon:repo"><span class="octicon octicon-repo"></span> New repository</a>
-                  </li>
-                  <li>
-                    <a href="/organizations/new" data-ga-click="Header, create new organization, icon:organization"><span class="octicon octicon-organization"></span> New organization</a>
-                  </li>
-
-
-                </ul>
-
-              </div>
-            </li> -->
-
-            <!-- <li class="header-nav-item">
-              <a href="/notifications" aria-label="You have no unread notifications" class="header-nav-link notification-indicator tooltipped tooltipped-s" data-ga-click="Header, go to notifications, icon:read" data-hotkey="g n">
-                <span class="mail-status all-read"></span>
-                <span class="octicon octicon-inbox"></span>
-              </a>
-            </li>
-
-            <li class="header-nav-item">
-              <a class="header-nav-link tooltipped tooltipped-s" href="/settings/profile" id="account_settings" aria-label="Settings" data-ga-click="Header, go to settings, icon:settings">
-                <span class="octicon octicon-gear"></span>
-              </a>
-            </li> -->
-
             <li class="header-nav-item">
               <form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="vgJDqCjpHlYH362CGncQWuebJ9X7lIRc3XxEISZ4u4DIbwrdlfD6oibDTUzM9p502ZHSkZQ2Gsvtzbn8JnPqoA=="></div>
                 <button class="header-nav-link sign-out-button tooltipped tooltipped-s" aria-label="Sign out" data-ga-click="Header, sign out, icon:logout">
                   <span class="octicon octicon-sign-out"></span>
                 </button>
-              </form>  </li>
+              </form>  
+            </li>
+          </ul>
 
-            </ul>
-
-
-
-          </div>
         </div>
-
-
-
-
-
+      </div>
 
         <div id="start-of-content" class="accessibility-aid"></div>
         <div class="site clearfix" role="main">
@@ -170,77 +108,36 @@
 
                 <div class="column three-fourths">
 
-
                   <div class="tabnav">
-                    <!-- <div class="tabnav-right">
-                      <a href="/account" class="minibutton tabnav-widget">
-                        <span class="octicon octicon-pencil"></span>
-                        Edit profile
-                      </a>
-                    </div> -->
 
                     <ul class="tabnav-tabs" data-pjax="" role="navigation">
-                      <!-- <li data-tab="contributions">
-                        <a href="/gs-rbarman" class="tabnav-tab ">
-                          <span class="octicon octicon-diff-added"></span>
-                          Contributions
-                        </a>
-                      </li> -->
                       <li data-tab="repo">
                         <a href="/gs-rbarman?tab=repositories" class="tabnav-tab selected">
                           <span class="octicon octicon-repo"></span>
                           Repositories
                         </a>
                       </li>
-                      <!-- <li data-tab="activity">
-                        <a href="/gs-rbarman?tab=activity" class="tabnav-tab ">
-                          <span class="octicon octicon-rss"></span>
-                          Public activity
-                        </a>
-                      </li> -->
                     </ul>
                   </div>
 
                   <div class="tab-content js-repo-filter">
-
                     <div class="repo-tab">
-                      <!-- <div class="filter-bar">
-                        <a href="/new" class="button primary new-repo">
-                          <span class="octicon octicon-repo"></span>
-                          New
-                        </a>      <ul class="repo_filterer">
-                          <li><a href="#" class="repo_filter js-repo-filter-tab" data-filter=".mirror">Mirrors</a></li>
-                          <li><a href="#" class="repo_filter js-repo-filter-tab" data-filter=".fork">Forks</a></li>
-                          <li><a href="#" class="repo_filter js-repo-filter-tab" data-filter=".source">Sources</a></li>
-                          <li><a href="#" class="repo_filter js-repo-filter-tab" data-filter=".private">Private</a></li>
-                          <li><a href="#" class="repo_filter js-repo-filter-tab" data-filter=".public">Public</a></li>
-                          <li class="all_repos"><a href="#" class="repo_filter js-repo-filter-tab filter-selected" data-filter=".public, .private">All</a></li>
-                        </ul>
-
-                        <form action="/search" class="repo-search" role="search">
-                          <input type="hidden" name="user" value="gs-rbarman">
-                          <input type="text" id="your-repos-filter" name="q" class="filter_input js-filterable-field" placeholder="Find a repository…" tabindex="2">
-                          <input type="submit" value="Search" class="button">
-                        </form>
-                      </div> -->
                       <ul class="repo-list js-repo-list" data-filterable-for="your-repos-filter" data-filterable-type="substring">
 
                       </ul>
-
-                  </div>
-
-                        </div>
-                      </div>
-
                     </div>
                   </div>
-
-
                 </div>
 
               </div>
-              <div class="modal-backdrop"></div>
             </div>
+
+
+          </div>
+
+        </div>
+      <div class="modal-backdrop"></div>
+    </div>
             <!-- /.wrapper -->
 
             <div class="container">
@@ -296,11 +193,6 @@
               <a href="#" class="octicon octicon-x flash-close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
               Something went wrong with that request. Please try again.
             </div>
-
-<!--
-            <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-996268c2962f947579cb9ec2908bd576591bc94b6a2db184a78e78815022ba2c.js"></script>
-            <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-2dc264df91dd435f94e97f2029e5c4ffb0f1824bd52c2651574045439d01f98b.js"></script> -->
-
 
 
         <script type="text/javascript" src="js/helper.js"></script>
