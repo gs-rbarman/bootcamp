@@ -12,12 +12,19 @@ var UserModel = Backbone.Model.extend({
 
 var UserView = Backbone.View.extend({
 	initialize: function(){
+		// console.log(this.$el.parents('.epiDerm'));
+		// if (this.$('.vcard-username').html() == "") {
+			this.$el.parents('.epiDerm').css('display', 'none');
+			this.$el.parents('.wrapper').find('.derm').css('display', 'none');
+		// }
         this.listenTo(this.model, 'change', function(){
 	    	this.render();
 	    });
 	},
 	events: {
-	        	
+	       "click .logOut": function(evt){
+	       		console.log('success');
+	       } 	
 	},
     updateUser:function(user){
     	var userId = user;
@@ -26,6 +33,7 @@ var UserView = Backbone.View.extend({
     	this.model.fetch();
     },
 	render: function(){
+		this.$el.parents('.epiDerm').css('display', 'block');
 		var data = this.model;
 		this.$('.vcard-fullname').html(data.get('name'));
         this.$(".userImg").attr('src', data.get('avatar_url'));
