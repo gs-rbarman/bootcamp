@@ -213,65 +213,212 @@
 					</div><!-- /.wrapper -->
 		      	</div>
 		    </div>
-	        <!-- /.wrapper -->
-
-            <div class="container foot">
-				<div class="site-footer" role="contentinfo">
-					<ul class="site-footer-links right">
-					  <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
-					  <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
-					  <li><a href="http://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
-					  <li><a href="http://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
-					  <li><a href="/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
-					  <li><a href="/about" data-ga-click="Footer, go to about, text:about">About</a></li>
-
-					</ul>
-
-					<a href="/" aria-label="Homepage">
-					  <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-					</a>
-
-					<ul class="site-footer-links">
-					  <li>© 2015 <span title="0.07486s from github-fe129-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
-					  <li><a href="/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
-					  <li><a href="/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
-					  <li><a href="/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
-					  <li><a href="/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
-					</ul>
-				</div>
-            </div>
 
 
-            <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
-				<div class="fullscreen-container js-suggester-container">
-					<div class="textarea-wrap">
-					  <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder=""></textarea>
-					  <div class="suggester-container">
-					    <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
-					  </div>
-					</div>
-				</div>
+		    <div class="wrapper">
 
-				<div class="fullscreen-sidebar">
-					<a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
-					  <span class="mega-octicon octicon-screen-normal"></span>
-					</a>
-					<a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w" aria-label="Switch themes">
-					  <span class="octicon octicon-color-mode"></span>
-					</a>
-				</div>
-            </div>
+		      <div class="header header-logged-in true" role="banner">
+		        <div class="container clearfix">
+
+		          <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+		            <span class="mega-octicon octicon-mark-github"></span>
+		          </a>
 
 
-
-            <div id="ajax-error-message" class="flash flash-error">
-              <span class="octicon octicon-alert"></span>
-              <a href="#" class="octicon octicon-x flash-close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
-              Something went wrong with that request. Please try again.
-            </div>			
-		
+		          <div class="site-search js-site-search" role="search">
+		              <input type="text" id="profSch" class="" data-hotkey="s" name="q" placeholder="Search profile" data-global-scope-placeholder="Search profile" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off">
+		          </div>
 
 
+		          <ul class="header-nav user-nav right" id="user-links">
+		            <li class="header-nav-item dropdown js-menu-container">
+		              <a class="header-nav-link name" href="" data-ga-click="Header, go to profile, text:username">
+		                <img alt="" class="userImg avatar" data-user="" height="20" src="" width="20">
+		                <span class="css-truncate">
+		                  <span class="css-truncate-target"></span>
+		                </span>
+		              </a>
+		            </li>
+
+		            <li class="header-nav-item">
+		              <form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="vgJDqCjpHlYH362CGncQWuebJ9X7lIRc3XxEISZ4u4DIbwrdlfD6oibDTUzM9p502ZHSkZQ2Gsvtzbn8JnPqoA=="></div>
+		                <button class="header-nav-link sign-out-button tooltipped tooltipped-s" aria-label="Sign out" data-ga-click="Header, sign out, icon:logout">
+		                  <span class="octicon octicon-sign-out"></span>
+		                </button>
+		              </form>  
+		            </li>
+		          </ul>
+
+		        </div>
+		      </div>
+
+		        <div id="start-of-content" class="accessibility-aid"></div>
+		        <div class="epiDerm">
+			        <div class="site clearfix" role="main">
+
+			          <div id="site-container" class="context-loader-container" data-pjax-container="">
+
+
+			            <div class="container">
+			              <div class="columns profilecols js-username" data-name="gs-rbarman">
+			                <div class="column one-fourth vcard" itemscope="" itemtype="http://schema.org/Person">
+			                  <a href="/account" aria-label="Change your avatar" class="vcard-avatar tooltipped tooltipped-s">
+			                    <img alt="" class="avatar userImg" data-user="" height="230" src="" width="230">
+			                  </a>
+
+			                  <h1 class="vcard-names">
+			                    <span class="vcard-fullname" itemprop="name"></span>
+			                    <span class="vcard-username" itemprop="additionalName"></span>
+			                  </h1>
+
+
+
+			                  <ul class="vcard-details">
+			                    <li class="vcard-detail" itemprop="worksFor">
+			                      <span class="octicon octicon-organization"></span><span id="cmpny"></span>
+			                    </li>
+
+			                    <li class="vcard-detail" itemprop="homeLocation">
+			                      <span class="octicon octicon-location"></span><span id="hloc"></span>
+			                    </li>
+
+			                    <li class="vcard-detail">
+			                      <span class="octicon octicon-clock"></span>
+			                      <span class="join-label">Joined on</span>
+			                      <time class="join-date" datetime="" day="numeric" is="local-time" month="short" year="numeric" title=""></time>
+			                    </li>
+			                  </ul>
+
+
+			                  <div class="vcard-stats">
+			                    <a class="vcard-stat" href="">
+			                      <strong class="vcard-stat-count"></strong>
+			                      <span class="text-muted">Followers</span>
+			                    </a>
+			                    <a class="vcard-stat" href="">
+			                      <strong class="vcard-stat-count"></strong>
+			                      <span class="text-muted">Starred</span>
+			                    </a>
+			                    <a class="vcard-stat" href="">
+			                      <strong class="vcard-stat-count"></strong>
+			                      <span class="text-muted">Following</span>
+			                    </a>
+			                  </div>
+
+			                  <div class="clearfix">
+			                    <h3>Organizations</h3>
+			                    <a href="" aria-label="" class="tooltipped tooltipped-n  avatar-group-item" itemprop="follows">
+			                      <img alt="" class="avatar" data-user="" height="42" src="" width="42">
+			                    </a>
+			                  </div>
+			                </div>
+
+			                <div class="column three-fourths">
+
+			                  <div class="tabnav">
+
+			                    <ul class="tabnav-tabs" data-pjax="" role="navigation">
+			                      <li data-tab="repo">
+			                        <a href="/gs-rbarman?tab=repositories" class="tabnav-tab selected">
+			                          <span class="octicon octicon-repo"></span>
+			                          Repositories
+			                        </a>
+			                      </li>
+			                    </ul>
+			                  </div>
+
+			                  <div class="tab-content js-repo-filter">
+			                    <div class="repo-tab">
+			                      <ul class="repo-list js-repo-list" data-filterable-for="your-repos-filter" data-filterable-type="substring">
+
+			                      </ul>
+			                    </div>
+			                  </div>
+			                </div>
+
+			              </div>
+			            </div>
+
+
+			          </div>
+
+			        </div>
+			        <div class="modal-backdrop"></div>
+		      	</div>
+		      	<div id="derm">
+					<div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+						<div id="js-flash-container">
+
+						</div>
+						<div class="pagehead repohead instapaper_ignore readability-menu">
+							<div class="container">
+
+
+								<h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+									<span class="mega-octicon octicon-repo"></span>
+									<span class="author">
+										<a href="/gs-rbarman" class="url fn" itemprop="url" rel="author">
+										<span id="user-handle" itemprop="title"></span>
+										</a>
+									</span>
+									<span class="path-divider">/</span>
+									<strong>
+										<a href="/gs-rbarman/bootcamp" class="js-current-repository" data-pjax="#js-repo-pjax-container">
+
+										</a>
+									</strong>
+
+									<span class="page-context-loader">
+										<img alt="" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16">
+									</span>
+
+								</h1>
+							</div><!-- /.container -->
+						</div><!-- /.repohead -->
+
+						<div class="container">
+							<div class="repository-with-sidebar repo-container new-discussion-timeline with-full-navigation">
+								<div class="repository-sidebar clearfix">
+
+									<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container" data-issue-count-url="/gs-rbarman/bootcamp/issues/counts">
+										<ul class="sunken-menu-group">
+											<li class="tooltipped tooltipped-w" aria-label="Code">
+											<a href="#" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /gs-rbarman/bootcamp">
+											<span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+											<img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16">
+											</a>
+											</li>
+
+											<li class="tooltipped tooltipped-w" aria-label="Issues">
+											<a href="/gs-rbarman/bootcamp/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /gs-rbarman/bootcamp/issues">
+											<span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+											<span class="counter"></span>
+
+											<img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16">
+											</a>
+											</li>
+										</ul>
+										<div class="sunken-menu-separator"></div>
+									</nav>
+								</div><!-- /.repository-sidebar -->
+
+								-->
+								<div class="repository-meta js-details-container ">
+									<div class="repository-description">
+
+									</div>
+
+
+									<span class="edit-link js-details-target"> - <a href="#">Edit</a></span>
+
+								</div><!-- /.repo-container -->
+								<div class="modal-backdrop"></div>
+							</div><!-- /.container -->
+						</div><!-- /.site -->
+					</div><!-- /.wrapper -->
+		      	</div>
+		    </div>
+	        
 
 
 
