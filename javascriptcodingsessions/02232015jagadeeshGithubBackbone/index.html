@@ -10,48 +10,42 @@
 	</head>
 	<body>
 			<a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+		   
 		    <div class="wrapper">
+				<div class = "navbarHeader">
 
-		      <div class="header header-logged-in true" role="banner">
-		        <div class="container clearfix">
-
-		          <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
-		            <span class="mega-octicon octicon-mark-github"></span>
-		          </a>
-
-
-		          <div class="site-search js-site-search" role="search">
-		              <input type="text" id="profSch" class="" data-hotkey="s" name="q" placeholder="Search profile" data-global-scope-placeholder="Search profile" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off">
-		          </div>
-
-
-		          <ul class="header-nav user-nav right" id="user-links">
-		            <li class="header-nav-item dropdown js-menu-container">
-		              <a class="header-nav-link name" href="" data-ga-click="Header, go to profile, text:username">
-		                <img alt="" class="userImg avatar" data-user="" height="20" src="" width="20">
-		                <span class="css-truncate">
-		                  <span class="css-truncate-target"></span>
-		                </span>
-		              </a>
-		            </li>
-
-		            <li class="header-nav-item">
-		                <button class="logOut header-nav-link sign-out-button tooltipped tooltipped-s">
-		                  <span class="octicon octicon-sign-out"></span>
-		                </button>  
-		            </li>
-		          </ul>
-
-		        </div>
-		      </div>
-
-		        <div id="start-of-content" class="accessibility-aid"></div>
-		        <div class="epiDerm">
+				</div>
+				 <div class="epiDerm">
 			        <div class="site clearfix" role="main">
 
 			          <div id="site-container" class="context-loader-container" data-pjax-container="">
 			            <div class="container">
-			              <div class="columns profilecols js-username" data-name="gs-rbarman">
+			              <div class="columns profilecols js-username mainPageContainer" data-name="gs-rbarman">
+			                	
+
+
+			              </div>
+			            </div>
+
+
+			          </div>
+
+			        </div>
+			        <div class="modal-backdrop"></div>
+		      	</div>
+				
+
+				<div class="dermContainer">
+					
+				</div>
+			</div><!-- /.wrapper -->
+		
+	        
+
+
+	
+      <script type="text/template" id = "userViewTemp">
+
 			                <div class="column one-fourth vcard" itemscope="" itemtype="http://schema.org/Person">
 			                  <a href="/account" aria-label="Change your avatar" class="vcard-avatar tooltipped tooltipped-s">
 			                    <img alt="" class="avatar userImg" data-user="" height="230" src="" width="230">
@@ -103,6 +97,11 @@
 			                    </a>
 			                  </div>
 			                </div>
+      </script>
+
+
+		<script type = "text/template" id = "repoTemp">
+
 
 			                <div class="column three-fourths">
 
@@ -127,16 +126,51 @@
 			                  </div>
 			                </div>
 
-			              </div>
-			            </div>
+		</script>
+		<script type="text/template" id = "headerTemp">
+			 <div class="header header-logged-in true" role="banner">
+		        <div class="container clearfix">
+
+		          <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+		            <span class="mega-octicon octicon-mark-github"></span>
+		          </a>
 
 
-			          </div>
+		          <div class="site-search js-site-search" role="search">
+		              <input type="text" id="profSch" class="" data-hotkey="s" name="q" placeholder="Search profile" data-global-scope-placeholder="Search profile" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off">
+		          </div>
 
-			        </div>
-			        <div class="modal-backdrop"></div>
-		      	</div>
-		      	<div class="derm">
+
+		          <ul class="header-nav user-nav right" id="user-links">
+		            <li class="header-nav-item dropdown js-menu-container">
+		              <a class="header-nav-link name" href="" data-ga-click="Header, go to profile, text:username">
+		                <img alt="" class="userImg avatar" data-user="" height="20" src="" width="20">
+		                <span class="css-truncate">
+		                  <span class="css-truncate-target"></span>
+		                </span>
+		              </a>
+		            </li>
+
+		            <li class="header-nav-item">
+		                <button class="logOut header-nav-link sign-out-button tooltipped tooltipped-s">
+		                  <span class="octicon octicon-sign-out"></span>
+		                </button>  
+		            </li>
+		          </ul>
+
+		        </div>
+		      </div>
+		</script>
+		<script type = "text/template" id = "epiDerm">
+
+			
+
+
+		</script>
+
+
+		<script id="derm" type = "text/template">
+			<div class="derm">
 					<div class="site" itemscope="" itemtype="http://schema.org/WebPage">
 						<div id="js-flash-container">
 
@@ -198,18 +232,12 @@
 								<div class="modal-backdrop"></div>
 							</div><!-- /.container -->
 						</div><!-- /.site -->
-					</div><!-- /.wrapper -->
-		      	</div>
-		    </div>
+					
+		</script>
 
-
-
-	        
-
-
-
-        <script type="text/javascript" src="js/helper.js"></script>
-	
+	 	<script type="text/javascript" src="js/helper.js"></script>
+		<script src="js/models.js"></script>
 		<script src="js/oraclev2.1.js"></script>
+		
 	</body>
 </html>

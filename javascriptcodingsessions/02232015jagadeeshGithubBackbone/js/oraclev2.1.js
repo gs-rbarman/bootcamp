@@ -1,24 +1,19 @@
 (function(window, _, $, Backbone){
-var GITAPP;
-var UserModel = Backbone.Model.extend({
+"use strict"
 
-	urlRoot: "https://api.github.com/",
+var GITAPP; // Is the main Variable hat holds the Instances of all Subviews
 
-	updateUrl:function(x){
-		this.url = this.urlRoot + 'users/' + x;
-		return this.url;
-	}
-});
+
+
 
 var UserView = Backbone.View.extend({
 	initialize: function(){
-		// console.log(this.$el.parents('.epiDerm'));
-		// if (this.$('.vcard-username').html() == "") {
-			this.$el.parents('.epiDerm').css('display', 'none');
-			this.$el.parents('.wrapper').find('.derm').css('display', 'none');
-		// }
+		
+		this.template = $("#userViewTemp").text().trim();		
+
         this.listenTo(this.model, 'change', function(){
 	    	this.render();
+	    	this.populateData();
 	    });
 	},
 	events: {
@@ -33,53 +28,41 @@ var UserView = Backbone.View.extend({
     	this.model.fetch();
     },
 	render: function(){
-		this.$el.parents('.epiDerm').css('display', 'block');
+		this.$el.html(this.template);
+
+	},
+	populateData : function() {
 		var data = this.model;
-		this.$('.vcard-fullname').html(data.get('name'));
-        this.$(".userImg").attr('src', data.get('avatar_url'));
-	    this.$(".vcard-username").html(data.get('login'));
-	    // this.$(".userImg").attr('src', data.get("avatar_url"));
-	    this.$(".vcard-details #cmpny").html(data.get('company'));
-	    this.$(".vcard-details #hloc").html(data.get('location'));
-	    this.$(".join-date").attr('datetime', data.get('created_at'));
-	    this.$(".vcard-stats a:nth-child(1) strong").html(data.get('followers'));
-	    this.$(".vcard-stats a:nth-child(3) strong").html(data.get('following'));
+		
+		this.$el.find('.vcard-fullname').html(data.get('name'));
+        this.$el.find(".userImg").attr('src', data.get('avatar_url'));
+	    this.$el.find(".vcard-username").html(data.get('login'));
+	    this.$el.find(".vcard-details #cmpny").html(data.get('company'));
+	    this.$el.find(".vcard-details #hloc").html(data.get('location'));
+	    this.$el.find(".join-date").attr('datetime', data.get('created_at'));
+	    this.$el.find(".vcard-stats a:nth-child(1) strong").html(data.get('followers'));
+	    this.$el.find(".vcard-stats a:nth-child(3) strong").html(data.get('following'));
 	}
 });
 
 
 
-
-var RepoModel = Backbone.Model.extend({
-    urlRoot:"https://api.github.com/",
-    updateUrl:function(x, y){
-		this.url = this.urlRoot + 'repos/' + x + '/' + y;
-		return this.url;
-	}
-});
-
-var ReposCollection = Backbone.Collection.extend({
-    model: RepoModel,
-    urlRoot:"https://api.github.com/",
-	updateUrl:function(x){
-		this.url = this.urlRoot + 'users/' + x + '/repos';
-		return this.url;
-	}
-});
 
 var ReposView = Backbone.View.extend({
     initialize:function(){
-
+    	this.template = $("#repoTemp").text().trim();
     },
-    updateUser:function(user){
 
+    updateUser:function(user){
+    	var self = this;
     	var userId = user;
         	var str = 'https://api.github.com/' + 'users/' + userId;
         	this.collection.updateUrl(userId);
         	this.collection.fetch({
 	            success:function(){
-	                this.render();
-	                router.navigate('home', {trigger: true});               
+	                self.render();
+	                self.populateData();
+	                           
 	            }.bind(this),
 	            error: function(data,err){
 	                console.info(err.responseJSON.message);
@@ -88,9 +71,14 @@ var ReposView = Backbone.View.extend({
 
     },
     render:function(){
-    	var self = this.$(".repo-list");
-    	console.log(self);
-		this.collection.each(function(item){
+    	
+    	this.$el.html(this.template);
+
+    },
+    populateData : function() {
+    	var self = this.$el.find(".repo-list");
+    	
+    	this.collection.each(function(item){
 		    self.append(repoList);
             self.find(".repo-list-item:last").append(repoHead);
             self.find(".repo-list-item:last").append(repoDesc);
@@ -101,19 +89,19 @@ var ReposView = Backbone.View.extend({
             self.find(".repo-list-description:last").html(item.get('description'));
             self.find(".repo-list-meta:last time").html(item.get('updated_at'));
 		});
-    },
+    },	
     events:{
     	
     }
 });
 
 var IndRepoView = Backbone.View.extend({
+	initialize : function() {
+		this.template = $("#derm").text().trim();
+	},
 	render: function(x){
-		this.$el.find(".epiDerm").hide();
-		this.$el.find(".derm").show();
-		this.collection.each(function(x){
-			console.log(x);
-		});
+		this.$el.html(this.template);
+		return this;
 	},
 	events: {
 
@@ -126,17 +114,41 @@ var IndRepoView = Backbone.View.extend({
 var GitHubApp = Backbone.View.extend({
 	initialize:function(){
 
+
+		this.template = $("#headerTemp").text().trim();
+
+
 		this._userView  = new UserView({
-			el: this.$el.find(".vcard"),
 			model: new UserModel()
 		});
 
 		this._reposView = new ReposView({
-		    el: this.$el.find(".repo-tab"),
 		    collection: new ReposCollection()
 		});
 
+
 	},
+	
+	loadIndRepo : function(query) {
+
+		if(!this._indRepoView) {
+			this._indRepoView = new IndRepoView({
+				el: this.$el.find(".dermContainer"),
+				collection: this._reposView.collection
+			});
+		}
+		
+		this._indRepoView.render(query).$el.show();
+
+	},
+	
+	render : function() {
+		this.$el.find(".navbarHeader").html(this.template);
+		this.$el.find(".mainPageContainer").append(this._userView.$el);
+		this.$el.find(".mainPageContainer").append(this._reposView.$el);
+
+	},
+	
 	events:{
 		"change #profSch":function(evt){
 			this._userView.updateUser(evt.currentTarget.value);
@@ -158,20 +170,36 @@ var octopus = Backbone.Router.extend({
 	},
 	home: function(){
 		if(!GITAPP) {
-			GITAPP = new GitHubApp({
+
+			window.Gitapp = GITAPP = new GitHubApp({
 				el:$(".wrapper")
 			});
+
+			GITAPP.render();
+		}
+
+		GITAPP._userView.$el.show();
+		GITAPP._reposView.$el.show();
+		
+		if(GITAPP._indRepoView) {
+			GITAPP._indRepoView.$el.hide();
 		}
 		
 	},
-	loadIndRepo: function(query){
+	loadIndRepo: function(query) {
 
-		this._indRepoView = new IndRepoView({
-			el: $(".wrapper"),
-		    collection: new ReposCollection()
-		});
+		if(!GITAPP) {
 
-		this._indRepoView.render(query);
+			window.Gitapp = GITAPP = new GitHubApp({
+				el:$(".wrapper")
+			});
+
+			GITAPP.render();
+		}
+
+		GITAPP._userView.$el.hide();
+		GITAPP._reposView.$el.hide();
+		GITAPP.loadIndRepo(query);
 	}
 });
 
