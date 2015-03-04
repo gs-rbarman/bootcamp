@@ -1,5 +1,5 @@
 (function(window, _, $, Backbone){
-
+var GITAPP;
 var UserModel = Backbone.Model.extend({
 
 	urlRoot: "https://api.github.com/",
@@ -78,7 +78,8 @@ var ReposView = Backbone.View.extend({
         	this.collection.updateUrl(userId);
         	this.collection.fetch({
 	            success:function(){
-	                this.render();                
+	                this.render();
+	                router.navigate('home', {trigger: true});               
 	            }.bind(this),
 	            error: function(data,err){
 	                console.info(err.responseJSON.message);
@@ -96,15 +97,31 @@ var ReposView = Backbone.View.extend({
             self.find(".repo-list-item:last").append(repoTime);
 
             self.find(".repo-list-name:last a").html(item.get("name"));
-            // $(".repo-list-name:last a").attr('href', 'repo.html');
+            self.find(".repo-list-name:last a").attr('href', "#/home/"+item.get("name"));
             self.find(".repo-list-description:last").html(item.get('description'));
             self.find(".repo-list-meta:last time").html(item.get('updated_at'));
 		});
     },
     events:{
-            
+    	
     }
 });
+
+var IndRepoView = Backbone.View.extend({
+	render: function(x){
+		this.$el.find(".epiDerm").hide();
+		this.$el.find(".derm").show();
+		this.collection.each(function(x){
+			console.log(x);
+		});
+	},
+	events: {
+
+	}
+});
+
+
+
 
 var GitHubApp = Backbone.View.extend({
 	initialize:function(){
@@ -128,12 +145,39 @@ var GitHubApp = Backbone.View.extend({
 	}
 });
 
-var _githubApp = new GitHubApp({
-	el:$(".wrapper")[0]
+
+
+/**Router here***/
+
+
+var octopus = Backbone.Router.extend({
+	routes: {
+		'' : 'home',
+		'home/:query': 'loadIndRepo'
+
+	},
+	home: function(){
+		if(!GITAPP) {
+			GITAPP = new GitHubApp({
+				el:$(".wrapper")
+			});
+		}
+		
+	},
+	loadIndRepo: function(query){
+
+		this._indRepoView = new IndRepoView({
+			el: $(".wrapper"),
+		    collection: new ReposCollection()
+		});
+
+		this._indRepoView.render(query);
+	}
 });
 
-var _githubApp = new GitHubApp({
-	el:$(".wrapper")[1]
-});
+var router = new octopus();
+window.aaa = router;
+
+Backbone.history.start();
 
 })(window, _, jQuery, Backbone);
