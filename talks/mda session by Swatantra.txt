@@ -4,18 +4,25 @@ MDA (application)
 Java
 -----
 > jersey 2.7
-> spring 1.4.1
+> spring 4.1.4
 
 Data stores
 -----------
-> mongo db 2.4 & 2.6 using robomongo to query stuff for visualization purposes
-> postgres
-> redis distributed processing
+1 mongo db 2.4 & 2.6 using robomongo to query stuff for visualization purposes
+2 postgres
+3 redshift
+4 redis distributed processing
+
+1,2,3 to store data 4 for caching
+
+S3
+--
+S3 buckets 
+
 
 Queues
 ------
-> rabbit mq
-
+> rabbit mq (background processing)
 
 
 build process
@@ -23,21 +30,22 @@ build process
 
 > maven 3.2.2 - configuring all external libraries for the java application
 > sonar 4.5.1 - quality of code
-> cobertura - code coverage
-> jacoco
+> jacoco - code coverage
 > jenkins - deployment of apps
-
+> git
+> gerrit
 
 deployment
 ----------
-> heroku
+> heroku - presently
+> AWS Elastic bean stack - soon
 
-Logentries - production log; moving onto Sumo Logic
-----------------------------------------------------
+Sumo Logic - Logentries
 
-S3/EC2
--------
+Zap Suite - security analysis
 
 
 -----------------------X-------------------------
 server, server application etc no required. Heroku gives everything
+
+dev is on EC2

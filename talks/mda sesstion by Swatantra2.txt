@@ -1,0 +1,29 @@
+RoleType.java for various authentications
+
+CollectionRestAPI.java 
+
+MessageType.java
+
+
+All servers contact salesforce sfLogin api for authentication
+
+
+dev.conf :
+gs.organization.in is to recognize if its admin user
+
+
+
+Tenant Management by Jamal
+---------------------------
+like tenants in a complex
+tenant related info in global db 'Tenant Master' which will have tenant id
+Schema db
+Data db
+
+*shared db - many -> one 
+auth db - auth info. all info should not be in same db.
+schedular db - schedule info; picks up a batch and processes
+
+everything is there in tenant master
+
+autoprovisining - 
